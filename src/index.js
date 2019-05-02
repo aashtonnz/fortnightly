@@ -8,7 +8,11 @@ import { ThemeProvider } from "@material-ui/styles";
 import * as serviceWorker from './service-worker';
 import Layout from './layout';
 
-const theme = createMuiTheme({ typography: { useNextVariants: true } });
+const theme = createMuiTheme({
+  typography: {
+    useNextVariants: true
+  }
+});
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
@@ -24,4 +28,3 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
-      
