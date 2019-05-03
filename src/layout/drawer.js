@@ -76,7 +76,7 @@ const Drawer = (props) => {
         onClose={toggleDrawer}>
         <Toolbar className={classes.drawerToolbar} variant="dense">
           <Typography variant="h5" color="primary">
-            Inertia
+            Fortnightly
           </Typography>
           <IconButton color="inherit" onClick={toggleDrawer}>
             <ChevronLeftIcon />
