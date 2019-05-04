@@ -4,7 +4,6 @@ import {
   Drawer,
   Toolbar,
   IconButton,
-  Typography,
   List,
   Divider,
   ListItem,
@@ -17,7 +16,10 @@ import isMobile from '../helpers/mobile';
 
 const useStyles = makeStyles({
   toolbar: {
-    justifyContent: 'space-between'
+    justifyContent: 'flex-end'
+  },
+  topList: {
+    paddingTop: '0'
   }
 });
 
@@ -40,15 +42,12 @@ const SideBar = ({ userItems, globalItems, isOpen, onClose, width }) => {
       onClose={onClose}
     >
       <Toolbar className={classes.toolbar} variant="dense">
-        <Typography variant="h5" color="primary">
-          Fortnightly
-        </Typography>
         <IconButton color="inherit" onClick={onClose}>
           <ChevronLeftIcon />
         </IconButton>
       </Toolbar>
       <div style={{ width }}>
-        <List>
+        <List className={classes.topList}>
           {userItems.map(mapItem)}
         </List>
         <Divider />
