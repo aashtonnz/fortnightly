@@ -12,7 +12,7 @@ import isMobile from '../helpers/mobile';
 
 const useStyles = makeStyles({
   appToolbar: {
-    justifyContent: 'space-between',
+    justifyContent: isMobile ? 'space-between' : 'flex-start',
     flexDirection: isMobile ? 'row-reverse' : 'row'
   }
 });
@@ -27,7 +27,7 @@ const AppBar = ({ onMenuClick }) => {
           <MenuIcon />
         </IconButton>
         <Typography color="inherit" variant="overline">
-          Fortnightly
+          Fortnightly — Mar 01
         </Typography>
       </Toolbar>
     </MuiAppBar>

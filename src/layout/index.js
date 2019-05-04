@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Paper } from '@material-ui/core';
+import { Paper, Typography } from '@material-ui/core';
 import { makeStyles } from "@material-ui/styles";
 import {
   NoteAdd as NoteAddIcon,
@@ -26,12 +26,7 @@ const items = {
     })
 };
 
-const content = (
-  <div>
-    <h1>This is the article title</h1>
-    {Array(20).fill(<p>Lorem sit enim aute consequat labore duis. Elit fugiat anim irure fugiat ipsum laboris ea consectetur adipisicing ut cupidatat. Proident proident laborum labore ea incididunt fugiat mollit velit fugiat. Culpa magna ea fugiat qui eiusmod esse do culpa occaecat aute tempor sunt dolore esse. Tempor commodo cupidatat nisi laborum labore ad sunt cupidatat sunt. Enim eiusmod laborum ad esse sit id Lorem laboris minim deserunt quis labore Lorem. Anim et aute ad eu. Mollit amet eu id magna. Commodo tempor deserunt ea ea exercitation tempor. Cillum irure Lorem sit anim fugiat eu ullamco aliqua dolore dolore.</p>)}
-  </div>
-);
+const content = 'Consectetur ea culpa eu tempor et veniam est adipisicing. Enim nulla sunt nisi elit. Dolor pariatur labore adipisicing irure fugiat minim officia et amet. Ex reprehenderit quis Lorem laborum cillum voluptate elit consectetur. Sit tempor fugiat velit id sint sint voluptate nulla pariatur eiusmod. Lorem quis nostrud Lorem nisi cillum. Excepteur labore veniam nisi minim mollit tempor aute voluptate adipisicing excepteur. Nulla laboris minim anim ea irure do veniam occaecat irure amet ullamco. Officia laboris velit Lorem incididunt nulla nulla cupidatat irure.';
 
 const sideBarWidth = 300;
 
@@ -70,7 +65,9 @@ const Layout = () => {
           sideBarOpen && !isMobile ? classes.shiftContent : ''
         ].join(' ')}
       >
-        {content}
+        <Typography align="justify">
+          {content}
+        </Typography>
       </Paper>
       <SideBar
         userItems={items.user}

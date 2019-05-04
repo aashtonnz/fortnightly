@@ -8,7 +8,8 @@ import {
   Divider,
   ListItem,
   ListItemIcon,
-  ListItemText
+  ListItemText,
+  Typography
 } from '@material-ui/core';
 import { ChevronLeft as ChevronLeftIcon } from '@material-ui/icons';
 
@@ -16,7 +17,7 @@ import isMobile from '../helpers/mobile';
 
 const useStyles = makeStyles({
   toolbar: {
-    justifyContent: 'flex-end'
+    justifyContent: 'space-between'
   },
   topList: {
     paddingTop: '0'
@@ -42,6 +43,9 @@ const SideBar = ({ userItems, globalItems, isOpen, onClose, width }) => {
       onClose={onClose}
     >
       <Toolbar className={classes.toolbar} variant="dense">
+        <Typography color="inherit" variant="overline">
+          Fortnightly — Mar 01
+        </Typography>
         <IconButton color="inherit" onClick={onClose}>
           <ChevronLeftIcon />
         </IconButton>
