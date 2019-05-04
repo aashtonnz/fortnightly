@@ -43,6 +43,7 @@ const SideBar = ({ userItems, globalItems, isOpen, onClose, width }) => {
   return (
     <Drawer
       variant={isMobile ? "temporary" : "persistent"}
+      anchor="left"
       open={isOpen}
       onClose={onClose}
     >

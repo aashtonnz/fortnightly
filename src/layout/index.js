@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Paper, Typography } from '@material-ui/core';
 import { makeStyles } from "@material-ui/styles";
 import {
+  Person as PersonIcon,
   NoteAdd as NoteAddIcon,
   Public as PublicIcon
 } from '@material-ui/icons';
@@ -10,20 +11,27 @@ import isMobile from '../helpers/mobile';
 import AppBar from './app-bar';
 import SideBar from './side-bar';
 
+
 const items = {
   user: [
+    {
+      label: 'Login / Signup',
+      icon: <PersonIcon />,
+      onClick: () => alert('Login / Signup clicked')
+    },
     {
       label: 'Create Article',
       icon: <NoteAddIcon />,
       onClick: () => alert('Create Article clicked')
     }
   ],
-  global: Array(30)
-    .fill({
+  global: [
+    {
       label: 'Top Articles',
       icon: <PublicIcon />,
       onClick: () => alert('Top Articles clicked')
-    })
+    }
+  ]
 };
 
 const content = 'Consectetur ea culpa eu tempor et veniam est adipisicing. Enim nulla sunt nisi elit. Dolor pariatur labore adipisicing irure fugiat minim officia et amet. Ex reprehenderit quis Lorem laborum cillum voluptate elit consectetur. Sit tempor fugiat velit id sint sint voluptate nulla pariatur eiusmod. Lorem quis nostrud Lorem nisi cillum. Excepteur labore veniam nisi minim mollit tempor aute voluptate adipisicing excepteur. Nulla laboris minim anim ea irure do veniam occaecat irure amet ullamco. Officia laboris velit Lorem incididunt nulla nulla cupidatat irure.';
