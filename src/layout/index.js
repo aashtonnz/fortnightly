@@ -18,19 +18,18 @@ const items = {
       onClick: () => alert('Create Article clicked')
     }
   ],
-  global: [
-    {
+  global: Array(30)
+    .fill({
       label: 'Top Articles',
       icon: <PublicIcon />,
       onClick: () => alert('Top Articles clicked')
-    }
-  ]
+    })
 };
 
 const content = (
   <div>
     <h1>This is the article title</h1>
-    <p>Lorem sit enim aute consequat labore duis. Elit fugiat anim irure fugiat ipsum laboris ea consectetur adipisicing ut cupidatat. Proident proident laborum labore ea incididunt fugiat mollit velit fugiat. Culpa magna ea fugiat qui eiusmod esse do culpa occaecat aute tempor sunt dolore esse. Tempor commodo cupidatat nisi laborum labore ad sunt cupidatat sunt. Enim eiusmod laborum ad esse sit id Lorem laboris minim deserunt quis labore Lorem. Anim et aute ad eu. Mollit amet eu id magna. Commodo tempor deserunt ea ea exercitation tempor. Cillum irure Lorem sit anim fugiat eu ullamco aliqua dolore dolore.</p>
+    {Array(20).fill(<p>Lorem sit enim aute consequat labore duis. Elit fugiat anim irure fugiat ipsum laboris ea consectetur adipisicing ut cupidatat. Proident proident laborum labore ea incididunt fugiat mollit velit fugiat. Culpa magna ea fugiat qui eiusmod esse do culpa occaecat aute tempor sunt dolore esse. Tempor commodo cupidatat nisi laborum labore ad sunt cupidatat sunt. Enim eiusmod laborum ad esse sit id Lorem laboris minim deserunt quis labore Lorem. Anim et aute ad eu. Mollit amet eu id magna. Commodo tempor deserunt ea ea exercitation tempor. Cillum irure Lorem sit anim fugiat eu ullamco aliqua dolore dolore.</p>)}
   </div>
 );
 
