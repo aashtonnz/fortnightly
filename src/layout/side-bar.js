@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles, useTheme } from "@material-ui/styles";
 import {
   Drawer,
   Toolbar,
@@ -12,12 +12,14 @@ import {
   Typography
 } from '@material-ui/core';
 import { ChevronLeft as ChevronLeftIcon } from '@material-ui/icons';
-
-import isMobile from '../helpers/mobile';
+import {
+  unstable_useMediaQuery as useMediaQuery
+} from '@material-ui/core/useMediaQuery';
 
 const useStyles = makeStyles({
   toolbar: {
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    padding: '0 6px 0 18px'
   },
   topList: {
     paddingTop: '0'
@@ -35,6 +37,8 @@ const mapItem = ({ icon, label, onClick }, index) => (
 
 const SideBar = ({ userItems, globalItems, isOpen, onClose, width }) => {
   const classes = useStyles();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <Drawer
@@ -42,7 +46,7 @@ const SideBar = ({ userItems, globalItems, isOpen, onClose, width }) => {
       open={isOpen}
       onClose={onClose}
     >
-      <Toolbar className={classes.toolbar} variant="dense">
+      <Toolbar className={classes.toolbar} variant="dense" disableGutters>
         <Typography color="inherit" variant="overline">
           Fortnightly — Mar 01
         </Typography>
