@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from "@material-ui/styles";
 import {
-  Drawer as MuiDrawer,
+  Drawer,
   Toolbar,
   IconButton,
   Typography,
@@ -18,9 +18,6 @@ import isMobile from '../helpers/mobile';
 const useStyles = makeStyles({
   toolbar: {
     justifyContent: 'space-between'
-  },
-  content: {
-    width: '300px'
   }
 });
 
@@ -33,11 +30,11 @@ const mapItem = ({ icon, label, onClick }, index) => (
   </ListItem>
 );
 
-const Drawer = ({ userItems, globalItems, isOpen, onClose }) => {
+const SideBar = ({ userItems, globalItems, isOpen, onClose, width }) => {
   const classes = useStyles();
 
   return (
-    <MuiDrawer
+    <Drawer
       variant={isMobile ? "temporary" : "persistent"}
       open={isOpen}
       onClose={onClose}
@@ -50,7 +47,7 @@ const Drawer = ({ userItems, globalItems, isOpen, onClose }) => {
           <ChevronLeftIcon />
         </IconButton>
       </Toolbar>
-      <div className={classes.content}>
+      <div style={{ width }}>
         <List>
           {userItems.map(mapItem)}
         </List>
@@ -59,8 +56,8 @@ const Drawer = ({ userItems, globalItems, isOpen, onClose }) => {
           {globalItems.map(mapItem)}
         </List>
       </div>
-    </MuiDrawer>
+    </Drawer>
   );
 }
 
-export default Drawer;
+export default SideBar;

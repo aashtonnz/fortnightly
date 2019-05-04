@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'typeface-roboto';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
+import { createMuiTheme } from "@material-ui/core/styles";
+import { ThemeProvider } from '@material-ui/styles';
 
 import * as serviceWorker from './service-worker';
 
@@ -16,12 +17,10 @@ const theme = createMuiTheme({
 
 const App = () => {
   return (
-    <MuiThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Layout>
-
-      </Layout>
-  </MuiThemeProvider>
+      <Layout />
+    </ThemeProvider>
   );
 };
 
