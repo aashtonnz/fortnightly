@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { Paper, Typography } from '@material-ui/core';
-import { makeStyles } from "@material-ui/styles";
+import { makeStyles, useTheme } from "@material-ui/styles";
 import {
   Person as PersonIcon,
   NoteAdd as NoteAddIcon,
   Public as PublicIcon
 } from '@material-ui/icons';
 
-import isMobile from '../helpers/mobile';
 import AppBar from './app-bar';
 import SideBar from './side-bar';
+import {
+  unstable_useMediaQuery as useMediaQuery
+} from '@material-ui/core/useMediaQuery';
 
 
 const items = {
@@ -54,6 +56,8 @@ const useStyles = makeStyles(theme => ({
 
 const Layout = () => {
   const classes = useStyles();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [sideBarOpen, setSideBarOpen] = useState(!isMobile);
 
   const handleToggleSideBar = () => {
