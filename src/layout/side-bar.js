@@ -26,7 +26,7 @@ const useStyles = makeStyles({
   }
 });
 
-const mapItem = ({ icon, label, onClick }, index) => (
+const toListItem = ({ icon, label, onClick }, index) => (
   <ListItem key={index} button onClick={onClick}>
     <ListItemIcon>
       {icon}
@@ -57,11 +57,11 @@ const SideBar = ({ userItems, globalItems, isOpen, onClose, width }) => {
       </Toolbar>
       <div style={{ width }}>
         <List className={classes.topList}>
-          {userItems.map(mapItem)}
+          {userItems.map(toListItem)}
         </List>
         <Divider />
         <List>
-          {globalItems.map(mapItem)}
+          {globalItems.map(toListItem)}
         </List>
       </div>
     </Drawer>

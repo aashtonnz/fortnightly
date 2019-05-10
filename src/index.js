@@ -6,7 +6,6 @@ import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from '@material-ui/styles';
 
 import * as serviceWorker from './service-worker';
-
 import Layout from './layout';
 
 const theme = createMuiTheme({
