@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { makeStyles, useTheme } from "@material-ui/styles";
 import {
   Drawer,
@@ -10,19 +10,19 @@ import {
   ListItemIcon,
   ListItemText,
   Typography
-} from '@material-ui/core';
-import { ChevronLeft as ChevronLeftIcon } from '@material-ui/icons';
+} from "@material-ui/core";
+import { ChevronLeft as ChevronLeftIcon } from "@material-ui/icons";
 import {
   unstable_useMediaQuery as useMediaQuery
-} from '@material-ui/core/useMediaQuery';
+} from "@material-ui/core/useMediaQuery";
 
 const useStyles = makeStyles({
   toolbar: {
-    justifyContent: 'space-between',
-    padding: '0 6px 0 18px'
+    justifyContent: "space-between",
+    padding: "0 6px 0 18px"
   },
   topList: {
-    paddingTop: '0'
+    paddingTop: "0"
   }
 });
 
@@ -38,7 +38,7 @@ const toListItem = ({ icon, label, onClick }, index) => (
 const SideBar = ({ userItems, globalItems, isOpen, onClose, width }) => {
   const classes = useStyles();
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <Drawer

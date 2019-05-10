@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { makeStyles } from "@material-ui/styles";
 import {
   AppBar as MuiAppBar,
@@ -6,15 +6,15 @@ import {
   IconButton,
   Typography,
   Button
-} from '@material-ui/core';
+} from "@material-ui/core";
 import {
   Menu as MenuIcon
-} from '@material-ui/icons';
+} from "@material-ui/icons";
 
 const useStyles = makeStyles(theme => ({
   appToolbar: {
-    justifyContent: 'space-between',
-    padding: '0 6px 0 18px'
+    justifyContent: "space-between",
+    padding: "0 6px 0 18px"
   }
 }));
 
