@@ -14,11 +14,15 @@ const theme = createMuiTheme({
   }
 });
 
+const content = 'Consectetur ea culpa eu tempor et veniam est adipisicing. Enim nulla sunt nisi elit. Dolor pariatur labore adipisicing irure fugiat minim officia et amet. Ex reprehenderit quis Lorem laborum cillum voluptate elit consectetur. Sit tempor fugiat velit id sint sint voluptate nulla pariatur eiusmod. Lorem quis nostrud Lorem nisi cillum. Excepteur labore veniam nisi minim mollit tempor aute voluptate adipisicing excepteur. Nulla laboris minim anim ea irure do veniam occaecat irure amet ullamco. Officia laboris velit Lorem incididunt nulla nulla cupidatat irure.';
+
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Layout />
+      <Layout>
+        {content}
+      </Layout>
     </ThemeProvider>
   );
 };
