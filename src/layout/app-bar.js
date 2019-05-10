@@ -4,7 +4,8 @@ import {
   AppBar as MuiAppBar,
   Toolbar,
   IconButton,
-  Typography
+  Typography,
+  Button
 } from '@material-ui/core';
 import {
   Menu as MenuIcon
@@ -23,9 +24,11 @@ const AppBar = ({ onMenuClick }) => {
   return (
     <MuiAppBar>
       <Toolbar className={classes.appToolbar} variant="dense" disableGutters>
-        <Typography color="inherit" variant="overline">
-          Fortnightly — Mar 01
-        </Typography>
+        <Button color="inherit" onClick={onMenuClick}>
+          <Typography color="inherit" variant="overline">
+            Fortnightly — Mar 01
+          </Typography>
+        </Button>
         <IconButton color="inherit" onClick={onMenuClick}>
           <MenuIcon />
         </IconButton>
