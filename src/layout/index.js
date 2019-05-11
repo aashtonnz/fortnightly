@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Paper, Typography } from "@material-ui/core";
 import { makeStyles, useTheme } from "@material-ui/styles";
 import {
   Person as PersonIcon,
@@ -40,14 +39,14 @@ const sideBarWidth = 300;
 const useStyles = makeStyles(theme => ({
   content: {
     minHeight: "100vh",
-    padding: "100px",
+    padding: "68px 20px 20px 20px",
     transition: theme.transitions.create("padding", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
   },
   shiftContent: {
-    paddingLeft: `${100 + sideBarWidth}px`
+    paddingLeft: `${50 + sideBarWidth}px`
   }
 }));
 
@@ -68,14 +67,14 @@ const Layout = ({ children }) => {
   return (
     <>
       <AppBar onMenuClick={handleToggleSideBar}/>
-      <Paper
+      <div
         className={[
           classes.content,
           sideBarOpen && !isMobile ? classes.shiftContent : ""
         ].join(" ")}
       >
         {children}
-      </Paper>
+      </div>
       <SideBar
         userItems={items.user}
         globalItems={items.global}
