@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles, useTheme } from "@material-ui/styles";
 import {
   Person as PersonIcon,
   NoteAdd as NoteAddIcon,
   Public as PublicIcon
 } from "@material-ui/icons";
-
-import AppBar from "./app-bar";
-import SideBar from "./side-bar";
 import {
   unstable_useMediaQuery as useMediaQuery
 } from "@material-ui/core/useMediaQuery";
+
+import AppBar from "./app-bar";
+import SideBar from "./side-bar";
 
 const items = {
   user: [
@@ -39,14 +39,14 @@ const sideBarWidth = 300;
 const useStyles = makeStyles(theme => ({
   content: {
     minHeight: "100vh",
-    padding: "68px 20px 20px 20px",
     transition: theme.transitions.create("padding", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
+    background: "white"
   },
   shiftContent: {
-    paddingLeft: `${50 + sideBarWidth}px`
+    paddingRight: `${sideBarWidth}px`
   }
 }));
 
@@ -54,15 +54,21 @@ const Layout = ({ children }) => {
   const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const [sideBarOpen, setSideBarOpen] = useState(!isMobile);
+  const [isSideBarOpen, setIsSideBarOpen] = useState(!isMobile);
 
   const handleToggleSideBar = () => {
-    setSideBarOpen(!sideBarOpen);
+    setIsSideBarOpen(!isSideBarOpen);
   };
   
   const handleCloseSideBar = () => {
-    setSideBarOpen(false);
+    setIsSideBarOpen(false);
   };
+
+  useEffect(() => {
+    if (isMobile) {
+      setIsSideBarOpen(false);
+    }
+  }, []);
 
   return (
     <>
@@ -70,7 +76,7 @@ const Layout = ({ children }) => {
       <div
         className={[
           classes.content,
-          sideBarOpen && !isMobile ? classes.shiftContent : ""
+          isSideBarOpen && !isMobile ? classes.shiftContent : ""
         ].join(" ")}
       >
         {children}
@@ -79,7 +85,7 @@ const Layout = ({ children }) => {
         userItems={items.user}
         globalItems={items.global}
         width={sideBarWidth}
-        isOpen={sideBarOpen}
+        isOpen={isSideBarOpen}
         onClose={handleCloseSideBar}
       />
     </>

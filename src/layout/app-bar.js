@@ -4,17 +4,13 @@ import {
   AppBar as MuiAppBar,
   Toolbar,
   IconButton,
-  Typography,
-  Button
+  Typography
 } from "@material-ui/core";
-import {
-  Menu as MenuIcon
-} from "@material-ui/icons";
+import { Menu as MenuIcon } from "@material-ui/icons";
 
 const useStyles = makeStyles(theme => ({
   appToolbar: {
-    justifyContent: "space-between",
-    padding: "0 6px 0 18px"
+    justifyContent: "flex-end",
   }
 }));
 
@@ -24,11 +20,9 @@ const AppBar = ({ onMenuClick }) => {
   return (
     <MuiAppBar>
       <Toolbar className={classes.appToolbar} variant="dense" disableGutters>
-        <Button color="inherit" onClick={onMenuClick}>
-          <Typography color="inherit" variant="overline">
-            Fortnightly — Mar 01
-          </Typography>
-        </Button>
+        <Typography color="inherit" variant="overline">
+          Fortnightly — Mar 01
+        </Typography>
         <IconButton color="inherit" onClick={onMenuClick}>
           <MenuIcon />
         </IconButton>

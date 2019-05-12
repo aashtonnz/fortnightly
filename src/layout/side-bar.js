@@ -11,18 +11,14 @@ import {
   ListItemText,
   Typography
 } from "@material-ui/core";
-import { ChevronLeft as ChevronLeftIcon } from "@material-ui/icons";
+import { ChevronRight as ChevronRightIcon } from "@material-ui/icons";
 import {
   unstable_useMediaQuery as useMediaQuery
 } from "@material-ui/core/useMediaQuery";
 
 const useStyles = makeStyles({
   toolbar: {
-    justifyContent: "space-between",
-    padding: "0 6px 0 18px"
-  },
-  topList: {
-    paddingTop: "0"
+    justifyContent: "flex-end"
   }
 });
 
@@ -43,7 +39,7 @@ const SideBar = ({ userItems, globalItems, isOpen, onClose, width }) => {
   return (
     <Drawer
       variant={isMobile ? "temporary" : "persistent"}
-      anchor="left"
+      anchor="right"
       open={isOpen}
       onClose={onClose}
     >
@@ -52,11 +48,11 @@ const SideBar = ({ userItems, globalItems, isOpen, onClose, width }) => {
           Fortnightly — Mar 01
         </Typography>
         <IconButton color="inherit" onClick={onClose}>
-          <ChevronLeftIcon />
+          <ChevronRightIcon />
         </IconButton>
       </Toolbar>
       <div style={{ width }}>
-        <List className={classes.topList}>
+        <List>
           {userItems.map(toListItem)}
         </List>
         <Divider />
