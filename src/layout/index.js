@@ -20,9 +20,9 @@ const items = {
       onClick: () => alert("Login / Signup clicked")
     },
     {
-      label: "Create Article",
+      label: "Create Articles",
       icon: <NoteAddIcon />,
-      onClick: () => alert("Create Article clicked")
+      onClick: () => alert("Create Articles clicked")
     }
   ],
   global: [
