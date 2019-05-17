@@ -7,7 +7,7 @@ import { ThemeProvider } from "@material-ui/styles";
 
 import * as serviceWorker from "./service-worker";
 import Layout from "./layout";
-import ArticleEditor from "./article-editor";
+import DraftList from "./draft-list";
 
 const theme = createMuiTheme({
   typography: {
@@ -20,7 +20,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Layout>
-        <ArticleEditor />
+        <DraftList />
       </Layout>
     </ThemeProvider>
   );

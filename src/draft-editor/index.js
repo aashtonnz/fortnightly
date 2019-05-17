@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const ArticleEditor = () => {
+const DraftEditor = () => {
   const classes = useStyles();
 
   return (
@@ -19,4 +19,4 @@ const ArticleEditor = () => {
   );
 };
 
-export default ArticleEditor;
+export default DraftEditor;
