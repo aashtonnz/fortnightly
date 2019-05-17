@@ -4,7 +4,6 @@ import "typeface-roboto";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
-
 import * as serviceWorker from "./service-worker";
 import Layout from "./layout";
 import DraftList from "./draft-list";

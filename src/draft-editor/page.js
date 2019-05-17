@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Editor, EditorState, ContentState } from "draft-js";
 import { makeStyles } from "@material-ui/styles";
-
-import axios from './axios-article';
+import axios from "./axios";
 
 const useStyles = makeStyles(theme => ({
   paper: {

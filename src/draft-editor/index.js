@@ -1,6 +1,5 @@
 import React from "react";
 import { makeStyles } from "@material-ui/styles";
-
 import Page from "./page";
 
 const useStyles = makeStyles(theme => ({

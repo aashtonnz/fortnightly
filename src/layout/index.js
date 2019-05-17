@@ -8,7 +8,6 @@ import {
 import {
   unstable_useMediaQuery as useMediaQuery
 } from "@material-ui/core/useMediaQuery";
-
 import AppBar from "./app-bar";
 import SideBar from "./side-bar";
 
@@ -43,7 +42,8 @@ const useStyles = makeStyles(theme => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    background: "white"
+    background: "white",
+    paddingTop: "48px"
   },
   shiftContent: {
     paddingRight: `${sideBarWidth}px`
